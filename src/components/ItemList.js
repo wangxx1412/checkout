@@ -1,7 +1,18 @@
 import React from "react";
+import { Grid } from "semantic-ui-react";
 
-function ItemList() {
-  return <div>List</div>;
+import Item from "./Item";
+
+function ItemList(props) {
+  return (
+    <Grid doubling stackable columns={5}>
+      {props.items
+        ? props.items.map((item) => {
+            return <Item item={item} key={item.id} />;
+          })
+        : "Loading"}
+    </Grid>
+  );
 }
 
 export default ItemList;

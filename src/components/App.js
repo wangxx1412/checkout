@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { Container } from "semantic-ui-react";
 import Page from "./Page";
 import ItemList from "./ItemList";
 
@@ -26,14 +26,16 @@ function App() {
 
   const changePage = (pageNum) => {
     setPage(pageNum);
-    console.log(pageNum);
   };
 
   return (
     <div className="App">
-      <header className="App-header">Hello</header>
-      <ItemList items={items} />
-      <Page changePage={changePage} />
+      <div className="main">
+        <Container>
+          <ItemList items={items} />
+          <Page changePage={changePage} />
+        </Container>
+      </div>
     </div>
   );
 }
