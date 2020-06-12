@@ -8,7 +8,6 @@ function Item(props) {
   return (
     <Grid.Column>
       <Card
-        color={selected ? "red" : "null"}
         onClick={() => {
           props.toggleItem(item);
           setSelected(!selected);
