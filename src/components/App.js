@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container } from "semantic-ui-react";
+import { Container, Segment } from "semantic-ui-react";
 
 import Header from "./Header";
 import Page from "./Page";
@@ -52,6 +52,9 @@ function App() {
       <Container>
         {content === "home" && (
           <div>
+            <Segment>
+              Click the item to add to or remove from the basket
+            </Segment>
             {items.length !== 0 ? (
               <ItemList
                 items={items.slice((page - 1) * 50, page * 50)}

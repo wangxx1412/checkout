@@ -14,8 +14,6 @@ function Payment(props) {
     total: props.total || 0,
   });
 
-  const [code, SetCode] = useState();
-
   // Handle Form State Change
   const handleFnameChange = (e) => {
     let value = e.target.value;
@@ -77,8 +75,8 @@ function Payment(props) {
   // Handle the discount code
   const handleCodeChange = (e) => {
     let value = e.target.value;
-    SetCode(value);
-    if (value == "wangxx10off") {
+
+    if (value === "wangxx10off") {
       setOrder((prev) => ({
         ...prev,
         total: order.total * 0.9,
