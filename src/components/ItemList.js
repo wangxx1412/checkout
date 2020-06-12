@@ -8,7 +8,9 @@ function ItemList(props) {
     <Grid doubling stackable columns={5}>
       {props.items
         ? props.items.map((item) => {
-            return <Item item={item} key={item.id} />;
+            return (
+              <Item item={item} key={item.id} toggleItem={props.toggleItem} />
+            );
           })
         : "Loading"}
     </Grid>
